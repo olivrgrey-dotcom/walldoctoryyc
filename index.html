@@ -151,7 +151,7 @@
   }
   .carousel-track{display:flex;height:100%;transition:transform .5s ease;}
   .carousel-slide{min-width:100%;height:100%;position:relative;}
-  .carousel-slide img{width:100%;height:100%;object-fit:cover;}
+  .carousel-slide img, .carousel-slide video{width:100%;height:100%;object-fit:cover;}
   .carousel-caption{
     position:absolute;left:0;right:0;bottom:0;
     background:linear-gradient(0deg, rgba(0,0,0,.75) 0%, transparent 100%);
@@ -403,10 +403,10 @@
         <div class="carousel-slide"><img src="assets/gallery/work-4.jpg" alt="Finished basement living space"><div class="carousel-caption">Finished Basement Living Space</div></div>
         <div class="carousel-slide"><img src="assets/gallery/work-5.jpg" alt="Commercial gym walls and floor repaint"><div class="carousel-caption">Commercial Gym — Walls &amp; Floor Repaint</div></div>
         <div class="carousel-slide"><img src="assets/gallery/work-6.jpg" alt="Framing to drywall transformation"><div class="carousel-caption">Framing To Drywall Transformation</div></div>
-        <div class="carousel-slide"><img src="assets/gallery/work-7.jpg" alt="Custom basement bedroom"><div class="carousel-caption">Custom Basement Bedroom</div></div>
-        <div class="carousel-slide"><img src="assets/gallery/work-8.jpg" alt="Finished bedroom renovation"><div class="carousel-caption">Finished Bedroom Renovation</div></div>
+        <div class="carousel-slide"><img src="assets/gallery/work-7.jpg" alt="Taping and beadwork"><div class="carousel-caption">Taping &amp; Beadwork</div></div>
         <div class="carousel-slide"><img src="assets/gallery/work-9.jpg" alt="Basement finishing, paint and trim"><div class="carousel-caption">Basement Finishing — Paint &amp; Trim</div></div>
         <div class="carousel-slide"><img src="assets/gallery/work-10.jpg" alt="Ceiling and wall finish detail"><div class="carousel-caption">Ceiling &amp; Wall Finish Detail</div></div>
+        <div class="carousel-slide"><video class="carousel-video" muted loop playsinline preload="metadata"><source src="assets/gallery/full-reno-walkthrough.mp4" type="video/mp4"></video><div class="carousel-caption">Full Reno Walk-Through</div></div>
       </div>
       <button class="carousel-arrow prev" id="carousel-prev" aria-label="previous">&#10094;</button>
       <button class="carousel-arrow next" id="carousel-next" aria-label="next">&#10095;</button>
@@ -548,6 +548,12 @@
       index = (i + count) % count;
       track.style.transform = 'translateX(-' + (index*100) + '%)';
       for(var d=0; d<dots.length; d++){ dots[d].classList.toggle('active', d===index); }
+      for(var s=0; s<slides.length; s++){
+        var vid = slides[s].querySelector('video');
+        if(!vid) continue;
+        if(s===index){ vid.currentTime = 0; vid.play().catch(function(){}); }
+        else{ vid.pause(); }
+      }
     }
     function next(){ goTo(index+1); }
     function prev(){ goTo(index-1); }
