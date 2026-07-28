@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wall Doctor YYC | Calgary Drywall Repair, Finishing & Painting</title>
+<meta name="description" content="Wall Doctor YYC — Calgary drywall repair, Level 5 finishes, painting and renovations. Almost a decade of hands-on craftsmanship. Free quotes. Serving Calgary, Chestermere, Airdrie & Okotoks.">
+<link rel="icon" href="assets/logo_icon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#2E7049;
+    --green-dark:#1F4F34;
+    --green-light:#3E8B5C;
+    --gold:#E8AE3F;
+    --gold-light:#F5C868;
+    --charcoal:#1C1D20;
+    --charcoal-2:#242529;
+    --cream:#FAF7EF;
+    --text-dark:#232323;
+    --text-muted:#5B5B5B;
+    --radius:14px;
+    --shadow:0 12px 30px rgba(0,0,0,0.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--text-dark);
+    background:var(--cream);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.logo-word{font-family:'Poppins',sans-serif;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1160px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    display:inline-block;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--gold);
+    margin-bottom:14px;
+  }
+  section{padding:100px 0;}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 56px;}
+  .section-head h2{font-size:2.3rem;font-weight:700;color:var(--charcoal);margin-bottom:14px;}
+  .section-head p{color:var(--text-muted);font-size:1.05rem;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:15px 30px;border-radius:999px;font-weight:600;font-size:0.98rem;
+    cursor:pointer;border:2px solid transparent;transition:all .2s ease;white-space:nowrap;
+  }
+  .btn-primary{background:var(--gold);color:var(--charcoal);}
+  .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);}
+  .btn-outline{border-color:rgba(255,255,255,0.55);color:#fff;}
+  .btn-outline:hover{background:rgba(255,255,255,0.12);transform:translateY(-2px);}
+  .btn-outline-dark{border-color:var(--green);color:var(--green);}
+  .btn-outline-dark:hover{background:var(--green);color:#fff;}
+
+  /* NAV */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:16px 0;transition:all .3s ease;
+    background:transparent;
+  }
+  header.scrolled{background:rgba(28,29,32,0.96);backdrop-filter:blur(6px);box-shadow:0 4px 20px rgba(0,0,0,0.2);padding:10px 0;}
+  nav{display:flex;align-items:center;justify-content:space-between;}
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{width:42px;height:42px;border-radius:8px;overflow:hidden;background:var(--charcoal);display:flex;align-items:center;justify-content:center;}
+  .brand-mark img{width:100%;height:100%;object-fit:cover;object-position:60% 45%;transform:scale(1.35);}
+  .logo-word{color:#fff;font-weight:700;font-size:1.05rem;letter-spacing:.3px;}
+  .logo-word span{color:var(--gold);}
+  .nav-links{display:flex;align-items:center;gap:34px;}
+  .nav-links a{color:#e7e7e7;font-weight:500;font-size:.95rem;transition:color .2s;}
+  .nav-links a:hover{color:var(--gold);}
+  .nav-right{display:flex;align-items:center;gap:20px;}
+  .nav-phone{color:#fff;font-weight:600;font-size:.95rem;}
+  .nav-phone span{color:var(--gold);}
+  .burger{display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;}
+
+  /* HERO */
+  .hero{
+    position:relative;min-height:100vh;display:flex;align-items:center;
+    background:radial-gradient(ellipse at 20% 20%, #2a3d30 0%, var(--charcoal) 55%), var(--charcoal);
+    overflow:hidden;padding-top:110px;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size:42px 42px;
+    mask-image:radial-gradient(ellipse at 60% 40%, black 0%, transparent 75%);
+  }
+  .hero-bird{
+    position:absolute;right:-8%;top:50%;transform:translateY(-50%);
+    width:640px;max-width:55vw;opacity:.16;filter:saturate(1.3);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;}
+  .hero h1{color:#fff;font-size:3.4rem;font-weight:800;line-height:1.12;margin-bottom:22px;}
+  .hero h1 em{font-style:normal;color:var(--gold);}
+  .hero p.lead{color:#d3d3d3;font-size:1.15rem;max-width:520px;margin-bottom:34px;}
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:44px;}
+  .hero-badges{display:flex;gap:28px;flex-wrap:wrap;}
+  .hero-badge{color:#cfcfcf;font-size:.88rem;display:flex;align-items:center;gap:8px;}
+  .hero-badge svg{width:18px;height:18px;stroke:var(--gold);flex-shrink:0;}
+  .hero-card{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+    border-radius:var(--radius);padding:34px;backdrop-filter:blur(6px);
+  }
+  .hero-card img{border-radius:10px;margin-bottom:6px;}
+
+  /* TRUST BAR */
+  .trust-bar{background:var(--green-dark);padding:28px 0;}
+  .trust-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;}
+  .trust-item{color:#fff;text-align:center;flex:1;min-width:160px;}
+  .trust-item strong{display:block;font-family:'Poppins',sans-serif;font-size:1.5rem;color:var(--gold-light);font-weight:700;}
+  .trust-item span{font-size:.85rem;color:#dcefe1;letter-spacing:.4px;text-transform:uppercase;}
+
+  /* SERVICES */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .service-card{
+    background:#fff;border-radius:var(--radius);padding:34px 28px;
+    box-shadow:var(--shadow);transition:transform .25s ease, box-shadow .25s ease;
+    border:1px solid rgba(0,0,0,.04);
+  }
+  .service-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.16);}
+  .service-icon{
+    width:54px;height:54px;border-radius:12px;background:var(--green);
+    display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+  }
+  .service-icon svg{width:28px;height:28px;stroke:var(--gold-light);fill:none;stroke-width:1.8;}
+  .service-card h3{font-size:1.15rem;margin-bottom:10px;color:var(--charcoal);}
+  .service-card p{color:var(--text-muted);font-size:.94rem;}
+
+  /* GALLERY / CAROUSEL */
+  .gallery{background:var(--charcoal);}
+  .gallery .section-head h2{color:#fff;}
+  .gallery .section-head p{color:#b7b7b7;}
+  .carousel{
+    position:relative;max-width:920px;margin:0 auto;
+    border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.4);
+    aspect-ratio:4/3;background:#111;
+  }
+  .carousel-track{display:flex;height:100%;transition:transform .5s ease;}
+  .carousel-slide{min-width:100%;height:100%;position:relative;}
+  .carousel-slide img{width:100%;height:100%;object-fit:cover;}
+  .carousel-caption{
+    position:absolute;left:0;right:0;bottom:0;
+    background:linear-gradient(0deg, rgba(0,0,0,.75) 0%, transparent 100%);
+    color:#fff;padding:36px 26px 18px;font-weight:600;font-size:1.02rem;
+  }
+  .carousel-arrow{
+    position:absolute;top:50%;transform:translateY(-50%);
+    width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,.5);
+    color:#fff;border:1px solid rgba(255,255,255,.3);font-size:1.3rem;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;
+    transition:background .2s;
+  }
+  .carousel-arrow:hover{background:var(--gold);color:var(--charcoal);}
+  .carousel-arrow.prev{left:16px;}
+  .carousel-arrow.next{right:16px;}
+  .carousel-dots{display:flex;justify-content:center;gap:9px;margin-top:22px;}
+  .carousel-dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .2s,transform .2s;}
+  .carousel-dot.active{background:var(--gold);transform:scale(1.25);}
+
+  /* ABOUT */
+  .about{background:#fff;}
+  .about-inner{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center;}
+  .about-photo{
+    border-radius:var(--radius);overflow:hidden;background:var(--charcoal);
+    box-shadow:var(--shadow);position:relative;
+  }
+  .about-photo img{width:100%;transform:scale(1.02);}
+  .about h2{font-size:2.1rem;color:var(--charcoal);margin-bottom:20px;font-weight:700;}
+  .about p{color:var(--text-muted);margin-bottom:18px;font-size:1.02rem;}
+  .about-points{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px;}
+  .about-point{display:flex;align-items:flex-start;gap:10px;font-size:.95rem;color:var(--text-dark);font-weight:500;}
+  .about-point svg{width:20px;height:20px;stroke:var(--green);flex-shrink:0;margin-top:1px;}
+
+  /* SERVICE AREA */
+  .area{background:var(--cream);}
+  .area-pills{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:34px;}
+  .area-pill{
+    background:#fff;border:2px solid var(--green);color:var(--green-dark);
+    font-weight:600;padding:10px 24px;border-radius:999px;font-size:.95rem;
+  }
+  .area-note{text-align:center;color:var(--text-muted);margin-top:26px;font-size:.92rem;}
+
+  /* CTA BANNER */
+  .cta-banner{
+    background:linear-gradient(120deg, var(--green) 0%, var(--green-dark) 100%);
+    text-align:center;padding:80px 0;
+  }
+  .cta-banner h2{color:#fff;font-size:2.1rem;margin-bottom:14px;font-weight:700;}
+  .cta-banner p{color:#dcefe1;margin-bottom:32px;font-size:1.05rem;}
+
+  /* CONTACT */
+  .contact-inner{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;}
+  .contact-info h2{font-size:2rem;margin-bottom:16px;color:var(--charcoal);}
+  .contact-info p{color:var(--text-muted);margin-bottom:30px;}
+  .contact-row{display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+  .contact-row .icon{
+    width:44px;height:44px;border-radius:10px;background:var(--green);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .contact-row .icon svg{width:22px;height:22px;stroke:var(--gold-light);fill:none;stroke-width:1.8;}
+  .contact-row a, .contact-row span{font-weight:600;color:var(--charcoal);font-size:1.02rem;}
+  .contact-form{
+    background:var(--charcoal);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow);
+  }
+  .contact-form h3{color:#fff;margin-bottom:22px;font-size:1.25rem;}
+  .form-row{margin-bottom:18px;}
+  .form-row label{display:block;color:#cfcfcf;font-size:.85rem;margin-bottom:7px;font-weight:500;}
+  .form-row input, .form-row textarea{
+    width:100%;padding:13px 16px;border-radius:9px;border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.06);color:#fff;font-family:'Inter',sans-serif;font-size:.95rem;
+  }
+  .form-row input::placeholder, .form-row textarea::placeholder{color:#8b8b8b;}
+  .form-row textarea{resize:vertical;min-height:100px;}
+  .contact-form .btn-primary{width:100%;margin-top:6px;}
+
+  /* FOOTER */
+  footer{background:var(--charcoal-2);padding:44px 0 28px;}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+  .footer-brand{display:flex;align-items:center;gap:10px;}
+  .footer-links{display:flex;gap:26px;flex-wrap:wrap;}
+  .footer-links a{color:#c8c8c8;font-size:.9rem;}
+  .footer-links a:hover{color:var(--gold);}
+  .footer-copy{color:#7a7a7a;font-size:.82rem;text-align:center;margin-top:26px;border-top:1px solid rgba(255,255,255,.08);padding-top:22px;}
+
+  /* MOBILE STICKY CTA */
+  .mobile-cta{
+    display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;
+    background:var(--charcoal);padding:12px 16px;gap:10px;
+    box-shadow:0 -6px 20px rgba(0,0,0,.25);
+  }
+  .mobile-cta a{flex:1;text-align:center;padding:13px;border-radius:10px;font-weight:600;font-size:.92rem;}
+  .mobile-cta .call{background:rgba(255,255,255,.1);color:#fff;}
+  .mobile-cta .quote{background:var(--gold);color:var(--charcoal);}
+
+  @media (max-width: 900px){
+    .nav-links{
+      display:none;position:absolute;top:100%;left:0;right:0;
+      flex-direction:column;align-items:flex-start;gap:0;
+      background:rgba(20,21,24,0.98);backdrop-filter:blur(6px);
+      padding:8px 24px 18px;border-top:1px solid rgba(255,255,255,.08);
+    }
+    .nav-links.open{display:flex;}
+    .nav-links a{width:100%;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+    .burger{display:block;}
+    .nav-phone{display:none;}
+    .nav-right .btn-primary{display:none;}
+    .logo-word{font-size:.85rem;white-space:nowrap;}
+    .brand-mark{width:36px;height:36px;}
+    header.scrolled .nav-links{background:rgba(20,21,24,0.99);}
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-card{display:none;}
+    .hero h1{font-size:2.4rem;}
+    .hero{padding-top:100px;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .about-inner{grid-template-columns:1fr;}
+    .about-points{grid-template-columns:1fr;}
+    .contact-inner{grid-template-columns:1fr;}
+    .trust-inner{justify-content:flex-start;}
+    section{padding:64px 0;}
+    .mobile-cta{display:flex;}
+    body{padding-bottom:70px;}
+    .hero-bird{opacity:.10;}
+  }
+  @media (max-width: 560px){
+    .services-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:1.95rem;}
+    .section-head h2{font-size:1.7rem;}
+  }
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="container">
+    <nav>
+      <a href="#top" class="brand">
+        <span class="brand-mark"><img src="assets/logo_icon.jpg" alt="Wall Doctor YYC logo"></span>
+        <span class="logo-word">WALL DOCTOR<span> YYC</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#work">Our Work</a>
+        <a href="#about">About</a>
+        <a href="#area">Service Area</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-right">
+        <a href="tel:5872283846" class="nav-phone">📞 <span>587-228-3846</span></a>
+        <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+        <button class="burger" aria-label="menu">☰</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <img src="assets/logo.jpg" class="hero-bird" alt="">
+  <div class="container hero-inner">
+    <div>
+      <span class="eyebrow">Calgary Drywall &amp; Painting Specialists</span>
+      <h1>Flawless Walls, <em>Done Right</em> The First Time.</h1>
+      <p class="lead">Drywall repair, Level 5 finishes, painting and renovations for Calgary homes and businesses — backed by almost a decade of hands-on craftsmanship.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+        <a href="tel:5872283846" class="btn btn-outline">Call 587-228-3846</a>
+      </div>
+      <div class="hero-badges">
+        <span class="hero-badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Locally Owned &amp; Operated</span>
+        <span class="hero-badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free, No-Pressure Quotes</span>
+        <span class="hero-badge"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Residential &amp; Commercial</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="assets/logo.jpg" alt="Wall Doctor YYC">
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="container trust-inner">
+    <div class="trust-item"><strong>~10 Years</strong><span>Hands-On Experience</span></div>
+    <div class="trust-item"><strong>2 Years</strong><span>Wall Doctor YYC</span></div>
+    <div class="trust-item"><strong>100%</strong><span>Free Quotes</span></div>
+    <div class="trust-item"><strong>4</strong><span>Cities Served</span></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What We Do</span>
+      <h2>Services Built Around Your Walls</h2>
+      <p>From a single patch job to a full renovation — one call covers it all.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 21l6-6m0 0l9-9a2.121 2.121 0 00-3-3l-9 9m3 3l-3-3m0 0l-3 3 3 3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Drywall Repair</h3>
+        <p>Patch holes, cracks, and water damage seamlessly.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 12h16M4 12a2 2 0 002 2h12a2 2 0 002-2M4 12a2 2 0 012-2h12a2 2 0 012 2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Level 5 Finishes</h3>
+        <p>Smooth, flawless surfaces ready for paint or feature lighting.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1V10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Full Renovations</h3>
+        <p>Basement finishing, room additions, and remodels.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M9 3h6l1 4H8l1-4zM8 7h8l-1 5H9L8 7zm1 5h6l-.8 9.2a1 1 0 01-1 .8H10.8a1 1 0 01-1-.8L9 12z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Painting &amp; Priming</h3>
+        <p>Clean, professional interior painting.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 3v3m0 12v3m9-9h-3M6 12H3m14.5-6.5l-2 2M8.5 15.5l-2 2m9-2l2 2m-11-9l-2-2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Touch-Ups</h3>
+        <p>Fast fixes for scuffs, nail holes, and small repairs.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16v4H4V6zm2 4v8a1 1 0 001 1h10a1 1 0 001-1v-8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Taping &amp; Mudding</h3>
+        <p>Precision joint taping and mudding for new builds.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="work">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Recent Work</span>
+      <h2>See The Craftsmanship</h2>
+      <p>A look at real Wall Doctor YYC projects around Calgary.</p>
+    </div>
+    <div class="carousel" id="carousel">
+      <div class="carousel-track" id="carousel-track">
+        <div class="carousel-slide"><img src="assets/gallery/work-1.jpg" alt="Bathroom renovation - fixtures and tile"><div class="carousel-caption">Bathroom Renovation — Fixtures &amp; Tile</div></div>
+        <div class="carousel-slide"><img src="assets/gallery/work-2.jpg" alt="Drywall taping and mudding"><div class="carousel-caption">Drywall Taping &amp; Mudding — Ready For Paint</div></div>
+        <div class="carousel-slide"><img src="assets/gallery/work-3.jpg" alt="Basement bedroom finishing"><div class="carousel-caption">Basement Bedroom Finishing</div></div>
+        <div class="carousel-slide"><img src="assets/gallery/work-4.jpg" alt="Finished basement living space"><div class="carousel-caption">Finished Basement Living Space</div></div>
+        <div class="carousel-slide"><img src="assets/gallery/work-5.jpg" alt="Full room drywall install"><div class="carousel-caption">Full Room Drywall Install</div></div>
+        <div class="carousel-slide"><img src="assets/gallery/work-6.jpg" alt="Framing to drywall transformation"><div class="carousel-caption">Framing To Drywall Transformation</div></div>
+        <div class="carousel-slide"><img src="assets/gallery/work-7.jpg" alt="Custom basement bedroom"><div class="carousel-caption">Custom Basement Bedroom</div></div>
+        <div class="carousel-slide"><img src="assets/gallery/work-8.jpg" alt="Finished bedroom renovation"><div class="carousel-caption">Finished Bedroom Renovation</div></div>
+        <div class="carousel-slide"><img src="assets/gallery/work-9.jpg" alt="Basement finishing, paint and trim"><div class="carousel-caption">Basement Finishing — Paint &amp; Trim</div></div>
+        <div class="carousel-slide"><img src="assets/gallery/work-10.jpg" alt="Ceiling and wall finish detail"><div class="carousel-caption">Ceiling &amp; Wall Finish Detail</div></div>
+      </div>
+      <button class="carousel-arrow prev" id="carousel-prev" aria-label="previous">&#10094;</button>
+      <button class="carousel-arrow next" id="carousel-next" aria-label="next">&#10095;</button>
+    </div>
+    <div class="carousel-dots" id="carousel-dots"></div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-inner">
+    <div class="about-photo">
+      <img src="assets/logo.jpg" alt="Wall Doctor YYC">
+    </div>
+    <div>
+      <span class="eyebrow">Why Wall Doctor YYC</span>
+      <h2>Almost A Decade Of Craftsmanship</h2>
+      <p>Wall Doctor YYC was built to bring big-company skill with small-business care to every job. With hands-on experience across residential, commercial, remediation, and renovation work, every wall gets treated like it's our own.</p>
+      <p>You deal directly with the owner — no middlemen, no call centers, just a straight answer and a job done right.</p>
+      <div class="about-points">
+        <div class="about-point"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Locally owned &amp; operated</div>
+        <div class="about-point"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free, no-pressure quotes</div>
+        <div class="about-point"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Clean &amp; respectful on-site</div>
+        <div class="about-point"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Direct line to the owner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="area" id="area">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Where We Work</span>
+      <h2>Proudly Serving Calgary &amp; Area</h2>
+      <p>Based in Calgary and serving the surrounding communities.</p>
+    </div>
+    <div class="area-pills">
+      <span class="area-pill">Calgary</span>
+      <span class="area-pill">Chestermere</span>
+      <span class="area-pill">Airdrie</span>
+      <span class="area-pill">Okotoks</span>
+    </div>
+    <p class="area-note">Don't see your community listed? Reach out — we likely still service your area.</p>
+  </div>
+</section>
+
+<div class="cta-banner">
+  <div class="container">
+    <h2>Ready To Fix, Refresh, Or Renovate?</h2>
+    <p>Get a free, no-obligation quote today — usually back to you within a day.</p>
+    <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+  </div>
+</div>
+
+<section id="contact">
+  <div class="container contact-inner">
+    <div class="contact-info">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Let's Talk About Your Walls</h2>
+      <p>Reach out directly — every call, text, and email goes straight to the owner.</p>
+
+      <div class="contact-row">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <a href="tel:5872283846">587-228-3846</a>
+      </div>
+      <div class="contact-row">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4V4zm0 0l8 8 8-8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <a href="mailto:walldoctoryyc@gmail.com">walldoctoryyc@gmail.com</a>
+      </div>
+      <div class="contact-row">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <span>Calgary, Chestermere, Airdrie &amp; Okotoks</span>
+      </div>
+    </div>
+
+    <form class="contact-form" id="quote-form">
+      <h3>Request Your Free Quote</h3>
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your name" required>
+      </div>
+      <div class="form-row">
+        <label for="phone">Phone or Email</label>
+        <input type="text" id="phone" placeholder="How should we reach you?" required>
+      </div>
+      <div class="form-row">
+        <label for="message">What do you need done?</label>
+        <textarea id="message" placeholder="Tell us a bit about the job..." required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Request</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark"><img src="assets/logo_icon.jpg" alt="Wall Doctor YYC logo"></span>
+        <span class="logo-word">WALL DOCTOR<span> YYC</span></span>
+      </div>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#area">Service Area</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 Wall Doctor YYC. All rights reserved. — Calgary, AB</p>
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <a href="tel:5872283846" class="call">📞 Call Now</a>
+  <a href="#contact" class="quote">Get a Free Quote</a>
+</div>
+
+<script>
+  window.addEventListener('scroll', function(){
+    document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  (function(){
+    var track = document.getElementById('carousel-track');
+    var slides = track.children;
+    var dotsWrap = document.getElementById('carousel-dots');
+    var count = slides.length;
+    var index = 0;
+    var timer;
+
+    for(var i=0;i<count;i++){
+      var dot = document.createElement('div');
+      dot.className = 'carousel-dot' + (i===0 ? ' active' : '');
+      dot.addEventListener('click', function(idx){ return function(){ goTo(idx); resetTimer(); }; }(i));
+      dotsWrap.appendChild(dot);
+    }
+    var dots = dotsWrap.children;
+
+    function goTo(i){
+      index = (i + count) % count;
+      track.style.transform = 'translateX(-' + (index*100) + '%)';
+      for(var d=0; d<dots.length; d++){ dots[d].classList.toggle('active', d===index); }
+    }
+    function next(){ goTo(index+1); }
+    function prev(){ goTo(index-1); }
+    function resetTimer(){ clearInterval(timer); timer = setInterval(next, 4500); }
+
+    document.getElementById('carousel-next').addEventListener('click', function(){ next(); resetTimer(); });
+    document.getElementById('carousel-prev').addEventListener('click', function(){ prev(); resetTimer(); });
+    document.getElementById('carousel').addEventListener('mouseenter', function(){ clearInterval(timer); });
+    document.getElementById('carousel').addEventListener('mouseleave', resetTimer);
+
+    resetTimer();
+  })();
+
+  var navLinks = document.querySelector('.nav-links');
+  document.querySelector('.burger').addEventListener('click', function(){
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){ navLinks.classList.remove('open'); });
+  });
+
+  document.getElementById('quote-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('name').value;
+    var contact = document.getElementById('phone').value;
+    var message = document.getElementById('message').value;
+    var subject = encodeURIComponent('Quote Request from ' + name);
+    var body = encodeURIComponent('Name: ' + name + '\nContact: ' + contact + '\n\nJob details:\n' + message);
+    window.location.href = 'mailto:walldoctoryyc@gmail.com?subject=' + subject + '&body=' + body;
+  });
+</script>
+
+</body>
+</html>
