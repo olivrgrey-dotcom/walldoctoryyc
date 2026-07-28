@@ -539,10 +539,12 @@
     for(var i=0;i<count;i++){
       var dot = document.createElement('div');
       dot.className = 'carousel-dot' + (i===0 ? ' active' : '');
-      dot.addEventListener('click', function(idx){ return function(){ goTo(idx); resetTimer(); }; }(i));
+      dot.addEventListener('click', function(idx){ return function(){ goTo(idx); syncTimer(); }; }(i));
       dotsWrap.appendChild(dot);
     }
     var dots = dotsWrap.children;
+
+    function isVideoSlide(i){ return !!slides[i].querySelector('video'); }
 
     function goTo(i){
       index = (i + count) % count;
@@ -558,13 +560,14 @@
     function next(){ goTo(index+1); }
     function prev(){ goTo(index-1); }
     function resetTimer(){ clearInterval(timer); timer = setInterval(next, 4500); }
+    function syncTimer(){ if(isVideoSlide(index)){ clearInterval(timer); } else { resetTimer(); } }
 
-    document.getElementById('carousel-next').addEventListener('click', function(){ next(); resetTimer(); });
-    document.getElementById('carousel-prev').addEventListener('click', function(){ prev(); resetTimer(); });
+    document.getElementById('carousel-next').addEventListener('click', function(){ next(); syncTimer(); });
+    document.getElementById('carousel-prev').addEventListener('click', function(){ prev(); syncTimer(); });
     document.getElementById('carousel').addEventListener('mouseenter', function(){ clearInterval(timer); });
-    document.getElementById('carousel').addEventListener('mouseleave', resetTimer);
+    document.getElementById('carousel').addEventListener('mouseleave', syncTimer);
 
-    resetTimer();
+    syncTimer();
   })();
 
   var navLinks = document.querySelector('.nav-links');
